@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <!--Se establece la codificación de caracteres para el documento-->
+                <meta charset="utf-8">
+                <!--Se importa la fuente de iconos de Google-->
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <!--Se importan los archivos CSS-->
+                <link type="text/css" rel="stylesheet" href="../resources/css/materialize.min.css"/>
+                <link type="text/css" rel="stylesheet" href="../resources/css/style.css" />
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <!--Se informa al navegador que el sitio web está optimizado para dispositivos móviles-->
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <!--Título del documento-->
+                <title>Smile Design - 'LogIn'</title>
+            </head>
+            
+            <body>
+                <!--Encabezado del documento-->
+                <header>
+                <nav class="nav-extended blue-grey">
+                <div class="nav-wrapper">
+                  <a href="#" class="brand-logo responsive-image" ><img width="100" height="69" class="circle responsive-img" src="../resources/img/SmileDesign.jfif"></a>
+                  <br>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>                  
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <br>
+                        <li><a></a></li>                  
+                       <!-- <li> <a href="calendario.php"><i class="material-icons left">check</i>Agenda</a></li> -->
+                       <!-- <li> <a href="pagos.php"><i class="material-icons left">assignment</i>Pagos</a></li> -->
+                       <!-- <li> <a href="doctores.php"><i class="material-icons left">face</i>Doctores Asignados</a></li> -->
+                       <!-- <li> <a href="Tratamientos.php"><i class="material-icons left">file_present</i>Tratamiento</a></li> -->
+                       <!-- <li> <a href="procedimientos.php"><i class="material-icons left">health_and_safety</i>Procedimientos</a> -->
+                  </ul>
+                </div>
+                <div class="nav-content">
+                  <ul class="tabs tabs-transparent">
+                        <li class="tab"> <a href="calendario.html"></i>Agenda</a></li>
+                        <li class="tab"> <a href="procedimientos.html"></i>Procedimientos</a>
+                        <li class="tab"> <a href="consultas.html"></i>Agregar Consultas</a></li>
+                        <li class="tab"> <a href="pagos.html"></i>Pagos</a></li>
+                        <li class="tab"> <a href="doctores.html"></i> Asignados</a></li>
+                        <li class="tab"> <a href="Tratamientos.html"></i>Tratamiento</a></li>                        
+                  </ul>
+                </div>
+              </nav>
+            
+            <ul class="sidenav" id="mobile-demo">
+              <li>  
+              <div class="user-view">
+                  <div class="background">
+                      <img src="../resources/img/fonfo12.jpg"> 
+                  </div>
+                  <a href="#user"><img class="circle" src="../resources/img/SmileDesign.jfif"></a>
+                  <a href="#name"><span class="white-text name">Usuario:<b> 'user'</b></span></a>
+                  <br>                            
+                  <br>
+              </div>                                         
+          <li>
+              <div class="divider"></div>
+          </li>              
+              <li><a href="index.html"  onclick="logOut()"><i class="material-icons left">highlight_off</i>Cerrar sesión</a></li>              
+           </ul> 
+          </header>
+          <!--Contenido principal del documento-->
+          <main>
+
+            <div class="container">
+                <div class="row card-panel">
+                   <h4 style="text-align:center;"> Historial de Pagos </h4>
+              
+              <div class="col s12">
+               <table class="responsive-table highlight">
+                  <!-- Cabeza de la tabla para mostrar los títulos de las columnas -->
+                  <thead>
+                      <tr>
+                      <th>Debe</th>
+                      <th>Abono</th>
+                      <th>Total</th>
+                      <th>Saldo</th>        
+                          <th class="actions-column">Acciones</th>
+                      </tr>
+                  </thead>
+                  <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+                  <tbody id="tbody-rows">
+                  </tbody>
+              </table>
+              </div>
+              
+              </div>
+              </div>
+
+            </main>
+            <!--Pie del documento-->
+            <footer class="page-footer blue-grey ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">Smile Design</h5>                               
+                        </div>
+                        <div class="col l4 offset-l2 s12">                                
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        © 2021 Copyright                            
+                    </div>
+                </div>
+            </footer>
+            <!--Importación de archivos JavaScript al final del cuerpo para una carga optimizada-->
+            <script type="text/javascript" src="../resources/js/sweetalert.min.js"></script> 
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript" src="../app/helpers/components.js"></script>                
+            <script type="text/javascript" src="../resources/js/materialize.min.js"></script>              
+            <script src="../resources/js/init.js"></script>        
+            <script type="text/javascript" src="../app/controllers/account.js"></script>            
+        </body>
+        </html>
