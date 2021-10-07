@@ -56,11 +56,11 @@
                 <main>
 
 
-            <br>
+                <br>
                 <div class="container">
                     <div class="row card-panel">        
                         <!-- Formulario para iniciar sesión -->
-                        <form method="post" id="session-form">
+                        <form method="post" id="pass-form">
                             <div class="input-field col s12 m6 offset-m3">
                                 <i class="material-icons prefix">person_pin</i>
                                 <input id="usuario" type="email" name="usuario"  />
@@ -69,16 +69,20 @@
                             <div class="input-field col s12 m6 offset-m3">
                                 <i class="material-icons prefix">security</i>
                                 <input id="clave" type="password" name="clave"  />
-                                <label for="clave">Clave</label>
+                                <label for="clave">Clave Nueva</label>
+                            </div>
+                            <div class="input-field col s12 m6 offset-m3">
+                                <i class="material-icons prefix">security</i>
+                                <input id="confirmacion" type="password" name="confirmacion"  />
+                                <label for="confirmacion">Confirme su Contraseña</label>
                             </div>
                             <div class="col s12 center-align">
                                 <button   class="btn waves-effect blue tooltipped" data-tooltip="Ingresar"><i class="material-icons">send</i></button>                                
-                                <br>
-                                <a href="clavesnuevas.html" >Registrarse</a>
                             </div>
                         </form>  
                     </div>  
                 </div>
+
 
             </main>
             <!--Pie del documento-->
@@ -105,6 +109,6 @@
             <script type="text/javascript" src="../resources/js/materialize.min.js"></script>              
             <script src="../resources/js/init.js"></script>        
             <script type="text/javascript" src="../app/controllers/account.js"></script>
-            <script type="text/javascript" src="../app/controllers/login.js"></script>            
+            <script type="text/javascript" src="../app/controllers/registro.js"></script>            
         </body>
         </html>

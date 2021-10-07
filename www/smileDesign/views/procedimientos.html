@@ -59,7 +59,7 @@
           <li>
               <div class="divider"></div>
           </li>              
-              <li><a href="index.html"  onclick="logOut()"><i class="material-icons left">highlight_off</i>Cerrar sesión</a></li>              
+              <li><a onclick="logOut()"><i class="material-icons left">highlight_off</i>Cerrar sesión</a></li>              
            </ul> 
           </header>
           <!--Contenido principal del documento-->
@@ -79,18 +79,12 @@
                       </div>
                 </div>   
               
-                <div class="row">
-                  <div class="col s12">
-                    <div class="card">
-                      <div class="card-content">
-                        <span class="card-title">Procedimiento</span>
-                        <p>Descripción</p>
-                        <p>Hora</p>
-                        <p>fecha</p>
-                      </div>        
-                    </div>
-                  </div>
-                </div>
+                <div>
+                  <!-- Título del contenido principal -->
+                  <h4 class="center indigo-text" id="title"></h4>
+                  <!-- Fila para mostrar los productos disponibles por categoría -->
+                  <div class="row" id="procedimientosag"></div>
+              </div>
               
                 </div>
               </div>
@@ -120,5 +114,6 @@
             <script type="text/javascript" src="../resources/js/materialize.min.js"></script>              
             <script src="../resources/js/init.js"></script>        
             <script type="text/javascript" src="../app/controllers/account.js"></script>            
+            <script type="text/javascript" src="../app/controllers/procedimientos.js"></script>            
         </body>
         </html>

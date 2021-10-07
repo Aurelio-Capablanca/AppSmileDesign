@@ -70,68 +70,40 @@
                    <h4 style="text-align:center;"> Gestion de Consultas </h4>
                    <div class="section container">
                       <div class="row card-panel" style="text-align:center;">
-                           <a href="#save-modal" onclick="openSendDialog()" class="waves-effect waves-light btn-small modal-trigger"><i class="material-icons left">publish</i>Agregar Consultas</a>
+                           <a href="#save-modal" onclick="openCreateDialog()" class="waves-effect waves-light btn-small modal-trigger"><i class="material-icons left">publish</i>Agregar Consultas</a>
                            <a class="waves-effect waves-light btn-small"><i class="material-icons left">rotate_left</i>Actualizar lista</a>                        
-                              <!-- <form method="post" id="search-form">
+                              <form method="post" id="search-form">
                               <div class="input-field col s12 m8">
                                   <i class="material-icons prefix">search</i>
                                   <input id="search" type="text" name="search" placeholder="Buscar por Nombre o Apellido del Paciente" required/>
                                   <label for="search">Buscador</label>
                               </div>
                               <div class="input-field col s6 m4">
-                                  <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>
-                                  <a href="../app/reports/consultaspaciente.php" target="_blank" class="btn waves-effect amber tooltipped" data-tooltip="Reporte de consultas por paciente"><i class="material-icons">assignment</i></a>
+                                  <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>                                  
                               </div>
               
-                          </form> -->
+                          </form>
                           </div>
                           </div>
-                      <br>
-                      <div class="section container">
-                      <div class="row card-panel" style="text-align:center;">
-                           <a href="#save-procedimiento-modal" onclick="openSendDialog()" class="waves-effect waves-light btn-small modal-trigger"><i class="material-icons left">publish</i>Agregar Procedimientos</a>
-                           <a href="#show-proced-modal"  class="waves-effect waves-light btn-small modal-trigger"><i class="material-icons left">rotate_left</i>lista de procedimientos</a>                        
-                              <!-- <form method="post" id="search-form">
-                              <div class="input-field col s12 m8">
-                                  <i class="material-icons prefix">search</i>
-                                  <input id="search" type="text" name="search" placeholder="Buscar por Nombre o Apellido del Paciente" required/>
-                                  <label for="search">Buscador</label>
-                              </div>
-                              <div class="input-field col s6 m4">
-                                  <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>
-                                  <a href="../app/reports/consultaspaciente.php" target="_blank" class="btn waves-effect amber tooltipped" data-tooltip="Reporte de consultas por paciente"><i class="material-icons">assignment</i></a>
-                              </div>
-              
-                          </form> -->
-                          </div>
-                          </div>
-                          <br>       
-                      <div id="show-proced-modal" class="modal">
-                                  <div class="modal-content center-align">
-                                  <h4> </h4>                
-                                      <h4 id="modal-proced-title" class="center-align"></h4>                
-                                      <form method="post" id="show-a-form">                   
-                                          <input class="hide" type="number" id="id_consultaP" name="id_consultaP"/> 
-                                          <input class="hide" type="number" id="id_pacienteAs" name="id_pacienteAs"/>  
-                                          <input id="notas_consultaP" type="text" name="notas_consultaP"  class="hide" />                        
-                                          <div class="row">
-                                              <table class="responsive-table highlight">                           
-                                                  <thead>
-                                                      <tr>                                    
-                                                          <th>Nombre Procedimiento</th>                                    
-                                                          <th>Descripción Procedimiento</th>                                    
-                                                          <th class="actions-column">Acciones</th>                                  
-                                                      </tr>
-                                                  </thead>                            
-                                                  <tbody id="proced-rows">
-                                                  </tbody>
-                                              </table>
-                                          <div class="row center-align">                    
-                                          </div>           
-                                      </form>
-                                  </div>            
-                              </div>
-                          </div>
+                      <br> 
+                      <div class="col s12 m12 12">
+                        <table class="responsive-table highlight">
+                            <!-- Cabeza de la tabla para mostrar los títulos de las columnas -->
+                            <thead>
+                                <tr>
+                                    <th>Nombre Paciente</th>
+                                    <th>Fecha Consulta</th>
+                                    <th>Hora Consulta</th>
+                                    <th>Causa Consulta</th>
+                                    <th class="actions-column">Acciones</th>
+                                </tr>
+                            </thead>
+                            <!-- Cuerpo de la tabla para mostrar un registro por fila -->
+                            <tbody id="tbody-rows">
+                            </tbody>
+                        </table>
+                    </div>                     
+                          <br>                     
               
                       <div id="save-modal" class="modal">
                           <div class="modal-content center-align">
@@ -167,67 +139,7 @@
                           </div>            
                       </div>
                     </div>
-              </div>
-              
-              <div id="save-procedimiento-modal" class="modal">
-                          <div class="modal-content center-align">
-                          <h4></h4>
-                              <!-- Título para la caja de dialogo -->
-                              <h4 id="modal-procedimiento-title" class="center-align"></h4>
-                              <!-- Formulario para crear o actualizar un registro -->
-                              <form method="post" id="save-procedimiento-form">
-                                  <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-                                  <input class="hide" type="number" id="id_consultasP" name="id_consultasP"/>                    
-                                  <div class="row">
-                                      <div class="input-field col s12 m6">
-                                          <i class="material-icons prefix">cake</i>
-                                          <input id="fecha_consultas" type="text" name="fecha_consultas" class="validate"  required/>                            
-                                      </div>                        
-                                      <div class="input-field col s6">
-                                          <select id="procedimiento" name="procedimiento">
-                                          </select>
-                                          <label>Procedimiento</label>                            
-                                      </div>                          
-                                      <div>
-                                       <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons center-align">cancel</i></a>
-                                      <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Guardar"><i class="material-icons center-align">save</i></button>                                
-                                      </div>
-                                  </div>           
-                              </form>
-                          </div>            
-                      </div>
-                    </div>
-              </div>
-              
-              <div id="save-procedimientos-modal" class="modal">
-                          <div class="modal-content center-align">
-                          <h4></h4>
-                              <!-- Título para la caja de dialogo -->
-                              <h4 id="modal-procedimientos-title" class="center-align"></h4>
-                              <!-- Formulario para crear o actualizar un registro -->
-                              <form method="post" id="save-procedimientos-form">
-                                  <!-- Campo oculto para asignar el id del registro al momento de modificar -->
-                                  <input class="hide" type="number" id="id_consultasPr" name="id_consultasPr"/>                    
-                                  <div class="row">
-                                      <div class="input-field col s12 m6">
-                                          <i class="material-icons prefix">cake</i>
-                                          <input id="fecha_consultasa" type="text" name="fecha_consultasa" class="validate"  required/>                            
-                                      </div>                        
-                                      <div class="input-field col s6">
-                                          <select id="procedimientos" name="procedimientos">
-                                          </select>
-                                          <label>Procedimiento</label>                            
-                                      </div>                          
-                                      <div>
-                                       <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons center-align">cancel</i></a>
-                                      <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Guardar"><i class="material-icons center-align">save</i></button>                                
-                                      </div>
-                                  </div>           
-                              </form>
-                          </div>            
-                      </div>
-                    </div>
-              </div>
+              </div>                          
               
               
               </div>
@@ -258,6 +170,7 @@
         <script type="text/javascript" src="../app/helpers/components.js"></script>                
         <script type="text/javascript" src="../resources/js/materialize.min.js"></script>              
         <script src="../resources/js/init.js"></script>        
-        <script type="text/javascript" src="../app/controllers/account.js"></script>            
+        <script type="text/javascript" src="../app/controllers/account.js"></script>
+        <script type="text/javascript" src="../app/controllers/consulta.js"></script>
     </body>
     </html>
